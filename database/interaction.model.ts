@@ -1,11 +1,11 @@
 import { Schema, model, models, Document } from 'mongoose';
 
 export interface IInteraction extends Document {
-  user: Schema.Types.ObjectId; // refence to user
+  user: Schema.Types.ObjectId;
   action: string;
-  question: Schema.Types.ObjectId; // reference to question
-  answer: Schema.Types.ObjectId; // reference to answer
-  tags: Schema.Types.ObjectId[]; // reference to tag
+  question: Schema.Types.ObjectId;
+  answer: Schema.Types.ObjectId;
+  tags: Schema.Types.ObjectId[];
   createdAt: Date;
 }
 
@@ -18,6 +18,7 @@ const InteractionSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Interaction = models.Interaction || model('Interaction', InteractionSchema);
+const Interaction =
+  models.Interaction || model('Interaction', InteractionSchema);
 
 export default Interaction;
