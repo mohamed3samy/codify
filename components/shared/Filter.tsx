@@ -36,8 +36,6 @@ const Filter = ({ filters, otherClasses, containerClasses }: Props) => {
 		router.push(newUrl, { scroll: false });
 	};
 
-	console.log(paramFilter);
-
 	return (
 		<div className={`relative ${containerClasses}`}>
 			<Select
