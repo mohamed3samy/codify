@@ -23,10 +23,11 @@ import { assignBadges } from '../utils';
 
 export async function getUserById(params: any) {
 	try {
-		connectToDB();
+		await connectToDB();
 
 		const { userId } = params;
 		const user = await User.findOne({ clerkId: userId });
+		console.log(user);
 
 		return user;
 	} catch (error) {
@@ -37,9 +38,10 @@ export async function getUserById(params: any) {
 
 export async function createUser(userData: CreateUserParams) {
 	try {
-		connectToDB();
+		await connectToDB();
 
 		const newUser = await User.create(userData);
+		console.log(newUser);
 
 		return newUser;
 	} catch (error) {
