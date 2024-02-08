@@ -66,7 +66,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
 	};
 
 	const generateAIAnswer = async () => {
-		if (!authorId) return;
+		if (!authorId || !question) return;
 
 		setSetIsSubmittingAI(true);
 
@@ -75,11 +75,12 @@ const Answer = ({ question, questionId, authorId }: Props) => {
 				`${process.env.NEXT_PUBLIC_SERVER_URL}/api/chatgpt`,
 				{
 					method: 'POST',
-					body: JSON.stringify({ questionId }),
+					body: JSON.stringify({ question }),
 				}
 			);
 
 			const aiAnswer = await response.json();
+			console.log(aiAnswer);
 
 			// Convert plain text to HTML format
 			const formattedAnswer = aiAnswer.reply.replace(
