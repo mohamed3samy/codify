@@ -214,11 +214,6 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
 									}}
 								/>
 							</FormControl>
-							<FormDescription className="body-regular mt-2.5 text-light-500">
-								Introduce the problem and expand on what
-								you put in the title. Minimum 20
-								characters.
-							</FormDescription>
 							<FormMessage className="text-red-500" />
 						</FormItem>
 					)}
@@ -249,7 +244,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
 												(tag: any) => (
 													<Badge
 														key={tag}
-														className="subtle-medium background-light800_dark300 text-light400_light500 flex items-center justify-center gap-2 rounded-md border-none px-4 py-2 capitalize"
+														className="text-xs lg:text-sm font-medium leading-[13px] background-light800_dark300 text-light400_light500 flex items-center justify-center gap-2 rounded-md border-none px-4 py-2 capitalize"
 														onClick={() =>
 															type !== 'Edit'
 																? handleTagRemove(

@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import Link from 'next/link';
 import { SignedIn } from '@clerk/nextjs';
 
@@ -37,6 +39,7 @@ const QuestionCard = ({
 	answers,
 	createdAt,
 }: QuestionProps) => {
+	const MemoizedRenderTag = memo(RenderTag);
 	const showActionButtons = clerkId && clerkId === author.clerkId;
 
 	return (
@@ -65,7 +68,7 @@ const QuestionCard = ({
 
 			<div className="mt-3.5 flex flex-wrap gap-2">
 				{tags.map((tag) => (
-					<RenderTag
+					<MemoizedRenderTag
 						key={tag._id}
 						_id={tag._id}
 						name={tag.name}
