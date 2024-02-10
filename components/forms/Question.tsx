@@ -244,7 +244,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
 												(tag: any) => (
 													<Badge
 														key={tag}
-														className="text-xs lg:text-sm font-medium leading-[13px] background-light800_dark300 text-light400_light500 flex items-center justify-center gap-2 rounded-md border-none px-4 py-2"
+														className="text-xs lg:text-sm font-medium leading-[13px] background-light800_dark300 text-light400_light500 flex items-center justify-center gap-2 rounded-md border-none px-4 py-2 lowercase"
 														onClick={() =>
 															type !== 'Edit'
 																? handleTagRemove(

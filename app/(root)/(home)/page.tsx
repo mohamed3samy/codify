@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 export default async function Home({ searchParams }: SearchParamsProps) {
 	const { userId } = auth();
 
-
 	let result;
 
 	if (searchParams?.filter === 'recommended') {
@@ -111,7 +110,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
 					pageNumber={
 						searchParams?.page ? +searchParams.page : 1
 					}
-					isNext={result.isNext}
+					isNext={result?.isNext}
 				/>
 			</div>
 		</>
