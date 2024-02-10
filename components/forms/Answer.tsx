@@ -1,6 +1,6 @@
 'use client';
 import { useRef, useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
