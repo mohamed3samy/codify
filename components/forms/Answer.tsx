@@ -27,7 +27,7 @@ interface Props {
 
 const Answer = ({ question, questionId, authorId }: Props) => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [isSubmittingAI, setSetIsSubmittingAI] = useState(false);
+	// const [isSubmittingAI, setSetIsSubmittingAI] = useState(false);
 	const editorRef = useRef(null);
 	const pathname = usePathname();
 	const { mode } = useTheme();
@@ -65,39 +65,39 @@ const Answer = ({ question, questionId, authorId }: Props) => {
 		}
 	};
 
-	const generateAIAnswer = async () => {
-		if (!authorId || !question) return;
+	// const generateAIAnswer = async () => {
+	// 	if (!authorId || !question) return;
 
-		setSetIsSubmittingAI(true);
+	// 	setSetIsSubmittingAI(true);
 
-		try {
-			const response = await fetch(
-				`${process.env.NEXT_PUBLIC_SERVER_URL}/api/chatgpt`,
-				{
-					method: 'POST',
-					body: JSON.stringify({ question }),
-				}
-			);
+	// 	try {
+	// 		const response = await fetch(
+	// 			`${process.env.NEXT_PUBLIC_SERVER_URL}/api/chatgpt`,
+	// 			{
+	// 				method: 'POST',
+	// 				body: JSON.stringify({ question }),
+	// 			}
+	// 		);
 
-			const aiAnswer = await response.json();
-			console.log(aiAnswer);
+	// 		const aiAnswer = await response.json();
+	// 		console.log(aiAnswer);
 
-			// Convert plain text to HTML format
-			const formattedAnswer = aiAnswer.reply.replace(
-				/\n/g,
-				'<br />'
-			);
+	// 		// Convert plain text to HTML format
+	// 		const formattedAnswer = aiAnswer.reply.replace(
+	// 			/\n/g,
+	// 			'<br />'
+	// 		);
 
-			if (editorRef.current) {
-				const editor = editorRef.current as any;
-				editor.setContent(formattedAnswer);
-			}
-		} catch (error) {
-			console.log(error);
-		} finally {
-			setSetIsSubmittingAI(false);
-		}
-	};
+	// 		if (editorRef.current) {
+	// 			const editor = editorRef.current as any;
+	// 			editor.setContent(formattedAnswer);
+	// 		}
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	} finally {
+	// 		setSetIsSubmittingAI(false);
+	// 	}
+	// };
 
 	return (
 		<div>
