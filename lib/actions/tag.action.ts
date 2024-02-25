@@ -2,37 +2,10 @@
 import { FilterQuery } from 'mongoose';
 
 import { connectToDB } from '../mongoose';
-import {
-  GetAllTagsParams,
-  GetQuestionsByTagIdParams,
-  GetTopInteractedTagsParams,
-} from './shared.types';
+import { GetAllTagsParams, GetQuestionsByTagIdParams } from './shared.types';
 import User from '@/database/user.model';
 import Tag, { ITag } from '@/database/tag.model';
 import Question from '@/database/question.model';
-
-export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
-  try {
-    connectToDB();
-
-    const { userId } = params;
-
-    const user = await User.findById(userId);
-
-    if (!user) throw new Error('user not found');
-
-    // Find interactions for the user and group by tags...
-    // Interaction...
-
-    return [
-      { _id: '1', name: 'tag' },
-      { _id: '2', name: 'tag2' },
-    ];
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
-}
 
 export async function getAllTags(params: GetAllTagsParams) {
   try {
@@ -121,7 +94,6 @@ export async function getQuestionsByTagId(params: GetQuestionsByTagIdParams) {
     throw error;
   }
 }
-
 
 export async function getTopPopularTags() {
   try {
