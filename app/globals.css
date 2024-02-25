@@ -8,6 +8,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.sideBar::-webkit-scrollbar {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px !important;
 }
@@ -19,10 +23,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #cfcfcf;
   border-radius: 6px;
-}
-
-.sideBar::-webkit-scrollbar {
-  display: none;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
