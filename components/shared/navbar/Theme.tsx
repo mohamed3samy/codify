@@ -8,8 +8,8 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from '@/components/ui/menubar';
-import { useTheme } from '@/context/ThemeProvider';
 import { themes } from '@/constants';
+import { useTheme } from '@/context/ThemeProvider';
 
 const Theme = () => {
   const { mode, setMode } = useTheme();

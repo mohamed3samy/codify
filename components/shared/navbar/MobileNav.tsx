@@ -10,8 +10,8 @@ import {
 	SheetClose,
 	SheetTrigger,
 } from '@/components/ui/sheet';
-import { Button } from '@/components/ui/button';
 import { sidebarLinks } from '@/constants';
+import { Button } from '@/components/ui/button';
 
 const NavContent = () => {
 	const pathname = usePathname();
